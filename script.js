@@ -66,5 +66,22 @@ function playRound() {
 	return results;
 }
 
-//Log results to console
-console.log(playRound());
+//Create function to play a best-of-five game
+function game() {
+	//Create integer variable for number of wins
+	let winCount = 0;
+
+	//Play 5 rounds
+	for (let round = 1; round < 6; round++) {
+		console.log('Round ' + round);
+
+		//If player wins then add 1 to win count
+		winCount += playRound();
+	}
+
+	//If player wins at least 3 rounds then player wins overall
+	//Else player loses
+	return (winCount >= 3 ? 'You win.' : 'You lose.');
+}
+
+console.log(game());
