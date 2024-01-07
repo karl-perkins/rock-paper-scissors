@@ -24,8 +24,8 @@ function playRound() {
 	//Put result of getComputerChoice into variable
 	computerSelection = getComputerChoice().toLowerCase();
 
-	//Create string variable for game results
-	let results = ''
+	//Create integer variable for game results, 1 = win, 0 = lose.
+	let results = 0;
 
 	//If player choice and computer choice are the same then play again
 	if (playerSelection === computerSelection) {
@@ -34,27 +34,33 @@ function playRound() {
 	}
 	//If player choice is Rock and computer choice is Paper then computer wins
 	else if (playerSelection === 'rock' && computerSelection === 'paper'){
-		results = 'You lose. Paper beats Rock.';
+		console.log('You lose. Paper beats Rock.');
+		results = 0;
 	}
 	//If player choice is Rock and computer choice is Scissors then player wins
 	else if (playerSelection === 'rock' && computerSelection === 'scissors'){
-		results = 'You win. Rock beats Scissors.';
+		console.log('You win. Rock beats Scissors.');
+		results = 1;
 	}
 	//If player choice is Paper and computer choice is Rock then player wins
 	else if (playerSelection === 'paper' && computerSelection === 'rock'){
-		results = 'You win. Paper beats Rock.';
+		console.log('You win. Paper beats Rock.');
+		results = 1;
 	}
 	//If player choice is Paper and computer choice is Scissors then computer wins
 	else if (playerSelection === 'paper' && computerSelection === 'scissors'){
-		results = 'You lose. Scissors beats Paper.';
+		console.log('You lose. Scissors beats Paper.');
+		results = 0;
 	}
 	//If player choice is Scissors and computer choice is Rock then computer wins
 	else if (playerSelection === 'scissors' && computerSelection === 'rock'){
-		results = 'You lose. Rock beats Scissors.';
+		console.log('You lose. Rock beats Scissors.');
+		results = 0;
 	}
 	//If player choice is Scissors and computer choice is Paper then player wins
 	else if (playerSelection === 'scissors' && computerSelection === 'paper'){
-		results = 'You win. Scissors beats Paper.';
+		console.log('You win. Scissors beats Paper.');
+		results = 1;
 	}
 	
 	return results;
